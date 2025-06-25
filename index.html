@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Bohème Production - Plaquette Interactive</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Montserrat:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Dancing+Script:wght@400;500;600;700&family=Great+Vibes:wght@400&family=Cinzel:ital,wght@0,400;0,500;0,600;1,400&family=Didot:wght@400;700&family=Bodoni+Moda:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <div class="boheme-plaquette">
+        <!-- Global background video -->
+        <div class="global-background-video">
+            <video id="global-bg-video" autoplay muted loop playsinline preload="auto">
+                <source src="assets/videos/magique-fumee.mp4" type="video/mp4">
+            </video>
+        </div>
+
+        <!-- Loading indicator -->
+        <div class="loading-indicator" id="loading-indicator">
+            Chargement...
+        </div>
+
+        <!-- Audio element -->
+        <audio id="background-music" loop preload="auto">
+            <source src="assets/audio/AIR_SING_BOHEME.mp3" type="audio/mpeg">
+        </audio>
+
+        <!-- Audio controls -->
+        <div class="audio-controls">
+            <button class="audio-control-btn" id="play-pause-btn" title="Play/Pause">
+                <span class="material-icons">play_arrow</span>
+            </button>
+            <button class="audio-control-btn" id="mute-btn" title="Mute/Unmute">
+                <span class="material-icons">volume_up</span>
+            </button>
+            <div class="volume-slider">
+                <input type="range" id="volume-slider" min="0" max="100" value="30">
+            </div>
+            <button class="audio-control-btn" id="presentation-mode-btn" title="Mode Présentation">
+                <span class="material-icons">present_to_all</span>
+            </button>
+        </div>
+
+        <!-- Navigation dots -->
+        <div class="navigation">
+            <div class="nav-dot active" data-section="cover" tabindex="0" role="button" aria-label="Aller à la couverture">
+                <div class="nav-tooltip">Couverture</div>
+            </div>
+            <div class="nav-dot" data-section="intro" tabindex="0" role="button" aria-label="Aller à la présentation">
+                <div class="nav-tooltip">Présentation</div>
+            </div>
+            <div class="nav-dot" data-section="bureau" tabindex="0" role="button" aria-label="Aller au bureau">
+                <div class="nav-tooltip">Notre Bureau</div>
+            </div>
+            <div class="nav-dot" data-section="artistes" tabindex="0" role="button" aria-label="Aller aux artistes">
+                <div class="nav-tooltip">Nos Artistes</div>
+            </div>
+            <div class="nav-dot" data-section="productions" tabindex="0" role="button" aria-label="Aller aux productions">
+                <div class="nav-tooltip">Nos Productions</div>
+            </div>
+            <div class="nav-dot" data-section="contact" tabindex="0" role="button" aria-label="Aller au contact">
+                <div class="nav-tooltip">Contact</div>
+            </div>
+        </div>
+
+        <!-- Section: Cover -->
+        <section class="section cover-section active" id="cover">
+            <div class="cover-content">
+                <div class="logo-container fade-up">
+                    <img src="assets/images/logos/logo-boheme-en-or.png" alt="Logo Bohème Production" class="logo" loading="eager">
+                </div>
+                <h1 class="cover-title fade-in-delay-1">
+                    <span class="cover-title-text">Bohème Production</span>
+                </h1>
+                <h2 class="cover-subtitle fade-in-delay-2">L'excellence lyrique en Côte d'Azur</h2>
+                <div class="golden-line fade-in-delay-3"></div>
+                <p class="cover-interactive-text fade-in-delay-3">Plaquette Interactive</p>
+
+                <div class="cover-scroll-indicator" id="start-exploration" tabindex="0" role="button" aria-label="Commencer l'exploration">
+                    <div class="scroll-text">Explorer</div>
+                    <div class="scroll-arrow">
+                        <span class="material-icons">keyboard_arrow_down</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: PRÉSENTATION -->
+        <section class="section" id="intro">
+            <div class="section-container">
+                <div class="section-header">
+                    <div class="section-header-video">
+                        <video autoplay muted loop playsinline preload="metadata">
+                            <source src="assets/videos/lasers-couleur-mouvement.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <h2 class="section-title">Présentation</h2>
+                </div>
+                <div class="section-content">
+                    <div class="intro-content-magazine">
+                        <div class="scrollable-content">
+
+                            <!-- Photo principale avec titre -->
+                            <div class="hero-image-container">
+                                <div class="hero-image-video-background">
+                                    <video autoplay muted loop playsinline preload="metadata">
+                                        <source src="assets/videos/magique-fumee.mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                                <img src="assets/images/photos/artistes-boheme.jpg" alt="Concert Bohème Production au Palais Clément Massier" class="hero-image" loading="lazy">
+                                <div class="hero-image-overlay">
+                                    <h3 class="hero-image-title">Concert Bohème Production<br>Palais Clément Massier</h3>
+                                </div>
+                            </div>
+
+                            <!-- CONTENU PRINCIPAL -->
+                            <div class="magazine-content-wrapper">
+                                <div class="magazine-intro-block">
+                                    <h3 class="magazine-title-main">Bohème Production</h3>
+                                    <h4 class="magazine-subtitle">L'Excellence Artistique À Votre Service</h4>
+
+                                    <div class="magazine-text-flow">
+                                        <h4 class="magazine-section-title">Entrez dans l'Univers de Bohème Production</h4>
+
+                                        <div class="content-section-container">
+                                            <p class="magazine-paragraph">
+                                                Bohème Production est un organisme de spectacle dédié à l'excellence artistique, fondé et présidé par Patrick Elie Féré, baryton verdien, PDG et producteur, également reconnu pour ses talents d'imitateur. Cette aventure unique est le fruit d'une rencontre créative avec deux artistes d'exception : Richard Alexandre Rittelmann et Norah Amsellem. Cette synergie unique révolutionne l'univers du spectacle vivant en créant une alchimie parfaite entre l'opéra, la pop lyrique et la variété internationale.
+                                            </p>
+                                        </div>
+
+                                        <!-- Nouvelle section 1: Une Constellation Artistique Complète -->
+                                        <h4 class="magazine-section-title-center">Une Constellation Artistique Complète</h4>
+
+                                        <div class="video-content-block">
+                                            <div class="video-background-container">
+                                                <video autoplay muted loop playsinline preload="metadata">
+                                                    <source src="assets/videos/magique-fumee.mp4" type="video/mp4">
+                                                </video>
+                                            </div>
+                                            <div class="image-overlay-container">
+                                                <img src="assets/images/graphics/boheme-artistic-collage.png" alt="Collection Artistique Bohème Production" class="content-image" loading="lazy">
+                                            </div>
+                                            <div class="content-text-block">
+                                                <p class="content-text">
+                                                    Bohème Production réunit une famille artistique exceptionnelle de 41 chanteurs de renommée internationale aux multiples talents. Nos spectacles font vibrer le public à travers une mosaïque d'expressions musicales - tantôt une voix s'élève seule, tantôt plusieurs artistes se rejoignent dans une harmonie parfaite autour d'œuvres qui ont certainement suscité de l'émotion dans votre vie. Du plus intime au plus grandiose, chaque configuration offre un moment unique, alliant opéra traditionnel, comédie musicale, opéra pop, variété internationale et bien d'autres styles artistiques. Notre passion se ressent à chaque note, transportant les spectateurs dans un voyage musical sans frontières. Cette richesse vocale permet de créer des expériences musicales inoubliables qui touchent directement au cœur.
+                                                </p>
+                                            </div>
+                                        </div>
+
+                                        <!-- TRILOGIE -->
+                                        <div class="trilogie-section-container">
+                                            <div class="trilogie-video-background">
+                                                <video autoplay muted loop playsinline preload="metadata">
+                                                    <source src="assets/videos/smoke_red_bg.mp4" type="video/mp4">
+                                                </video>
+                                            </div>
+                                            <div class="trilogie-image-overlay">
+                                                <img src="assets/images/graphics/trilogie_lyrique.png" alt="Trilogie Lyrique" class="trilogie-image" loading="lazy">
+                                            </div>
+                                        </div>
+
+                                        <!-- Trio de Virtuoses -->
+                                        <h4 class="magazine-section-title-center">Trio de Virtuoses</h4>
+                                        <h5 style="font-family: 'Dancing Script', cursive; font-style: italic; text-align: center; color: var(--black); margin-bottom: 30px; font-size: 1.4rem;">Piano, Direction et Polyvalence</h5>
+
+                                        <div class="video-content-block">
+                                            <div class="video-background-container">
+                                                <video autoplay muted loop playsinline preload="metadata">
+                                                    <source src="assets/videos/partitions_flow.mp4" type="video/mp4">
+                                                </video>
+                                            </div>
+                                            <div class="image-overlay-container">
+                                                <img src="assets/images/graphics/trio_piano.png" alt="Trio Piano" class="content-image" loading="lazy">
+                                            </div>
+                                            <div class="content-text-block">
+                                                <p class="content-text">
+                                                    Cette constellation s'enrichit de 3 maîtres du piano : un chef d'orchestre dirigeant un ensemble orchestral complet, une pianiste chanteuse, et une artiste polyvalente aux multiples facettes. Certains d'entre eux assument également des rôles de chef de chant ou de chef de chœur, témoignant de l'excellence et de la diversité de notre équipe.
+                                                </p>
+                                            </div>
+                                        </div>
+
+                                        <!-- Message Patrick -->
+                                        <div class="patrick-quote-highlight">
+                                            <h4 class="patrick-quote-title">La Promesse d'un Enchantement Éternel</h4>
+                                            <h5 style="color: var(--gold); font-style: italic; margin-bottom: 20px; font-size: 1.3rem;">Mot de notre président Patrick Elie Féré</h5>
+                                            <div class="patrick-quote">
+                                                Notre quête transcende la simple mélodie : nous tissons des ponts entre les âmes à travers la magie universelle de la musique. <span class="text-gold-shimmer">Des voix cristallines aux rythmes envoûtants</span> résonnent dans chaque création, portées par cette <span class="text-gold-shimmer">production d'exception</span> où brillent nos <span class="text-gold-shimmer">talents en éclosion</span>.
+                                                <br><br>
+                                                Chaque spectacle devient un tableau vivant où les voix se mêlent dans une synergie de bonheur pur, touchant le cœur de chaque spectateur, qu'il soit novice ou connaisseur éclairé. <span class="text-gold-shimmer">Transformant les rêves en parcours qui flamboient</span>, nous révélons des destinées artistiques exceptionnelles.
+                                                <br><br>
+                                                <span class="text-gold-shimmer">La musique nous transporte</span>, et <span class="text-gold-shimmer">Bohème ouvre les portes</span> de vos plus beaux rêves artistiques, créant une alchimie magique où chaque note devient une promesse d'éternité, chaque voix une caresse pour l'âme, chaque spectacle un voyage inoubliable vers l'excellence artistique universelle.
+                                            </div>
+                                            <div class="patrick-signature-integrated">
+                                                <img src="assets/images/logos/Boheme Production en blanc.png" alt="Bohème Production" class="boheme-signature-image" loading="lazy">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Logo décoratif -->
+                                <div class="decorative-logo-section">
+                                    <div class="decorative-video-background">
+                                        <video autoplay muted loop playsinline preload="metadata">
+                                            <source src="assets/videos/magique-fumee.mp4" type="video/mp4">
+                                        </video>
+                                    </div>
+                                    <img src="assets/images/logos/logo-boheme-en-or.png" alt="Logo Bohème Production" class="decorative-logo" loading="lazy">
+                                </div>
+
+                                <!-- Crédits finaux -->
+                                <div class="final-credits">
+                                    <div class="credits-line"><span class="credits-name">Mickaël Guedj</span> - Conception d'expérience interactive et musicale, Design numérique, Musique originale, Réalisation, Production assistée par IA</div>
+                                    <div class="credits-line"><span class="credits-name">Stéphanie Doméjean</span> - Créations textuelles et visuelles, Paroles, Photographies</div>
+                                    <div class="credits-copyright">© 2025 Bohème Production</div>
+                                </div>
+
+                                <!-- POINT DE FIN PRÉSENTATION -->
+                                <div class="section-end-point" data-section="presentation">
+                                    <div class="section-end-ornament">
+                                        <span class="section-end-icon material-icons">auto_awesome</span>
+                                    </div>
+                                    <h3 class="section-end-title">Fin de Présentation</h3>
+                                    <p class="section-end-message">
+                                        Découvrez maintenant notre équipe dirigeante et notre organisation
+                                    </p>
+                                    <div class="section-end-divider"></div>
+                                    <a href="#" class="section-end-next" data-next-section="bureau">
+                                        Notre Bureau
+                                        <span class="material-icons">arrow_forward</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Bureau -->
+        <section class="section" id="bureau">
+            <div class="section-container">
+                <div class="section-header">
+                    <div class="section-header-video">
+                        <video autoplay muted loop playsinline preload="metadata">
+                            <source src="assets/videos/lasers-couleur-mouvement.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <h2 class="section-title">Notre Bureau</h2>
+                </div>
+                <div class="section-content">
+                    <div class="bureau-grid">
+                        <div class="bureau-card">
+                            <div class="bureau-photo-real">
+                                <img src="assets/images/photos/Elie Féré HD.jpg" alt="Patrick Elie Féré" loading="lazy">
+                            </div>
+                            <h3 class="bureau-name">Patrick Elie Féré</h3>
+                            <p class="bureau-title">Fondateur - Président</p>
+                        </div>
+                        <div class="bureau-card">
+                            <div class="bureau-photo-placeholder">
+                                <span class="material-icons">person</span>
+                            </div>
+                            <h3 class="bureau-name">Richard Rittelmann</h3>
+                            <p class="bureau-title">Vice-président</p>
+                        </div>
+                        <div class="bureau-card">
+                            <div class="bureau-photo-placeholder">
+                                <span class="material-icons">person</span>
+                            </div>
+                            <h3 class="bureau-name">Norah Amsellem</h3>
+                            <p class="bureau-title">Vice-présidente</p>
+                        </div>
+                        <div class="bureau-card">
+                            <div class="bureau-photo-placeholder">
+                                <span class="material-icons">person</span>
+                            </div>
+                            <h3 class="bureau-name">Pascal Terrien</h3>
+                            <p class="bureau-title">Directeur artistique principal</p>
+                        </div>
+                        <div class="bureau-card">
+                            <div class="bureau-photo-placeholder">
+                                <span class="material-icons">person</span>
+                            </div>
+                            <h3 class="bureau-name">Avi Klemberg</h3>
+                            <p class="bureau-title">Directeur artistique</p>
+                        </div>
+                        <div class="bureau-card">
+                            <div class="bureau-photo-placeholder">
+                                <span class="material-icons">person</span>
+                            </div>
+                            <h3 class="bureau-name">Mickael Guedj</h3>
+                            <p class="bureau-title">Directeur artistique</p>
+                        </div>
+                        <div class="bureau-card">
+                            <div class="bureau-photo-placeholder">
+                                <span class="material-icons">person</span>
+                            </div>
+                            <h3 class="bureau-name">Patricia Rubino</h3>
+                            <p class="bureau-title">Secrétaire</p>
+                        </div>
+                        <div class="bureau-card">
+                            <div class="bureau-photo-placeholder">
+                                <span class="material-icons">person</span>
+                            </div>
+                            <h3 class="bureau-name">Marielle Bader</h3>
+                            <p class="bureau-title">Trésorière</p>
+                        </div>
+                        <div class="bureau-card">
+                            <div class="bureau-photo-placeholder">
+                                <span class="material-icons">person</span>
+                            </div>
+                            <h3 class="bureau-name">David.Sk</h3>
+                            <p class="bureau-title">Administrateur réseaux sociaux</p>
+                        </div>
+                    </div>
+                    <!-- Texte de fin de section Bureau -->
+                    <div class="bureau-footer-text">
+                        Une équipe passionnée au service de l'excellence artistique
+                    </div>
+
+                    <!-- POINT DE FIN BUREAU -->
+                    <div class="section-end-point" data-section="bureau">
+                        <div class="section-end-ornament">
+                            <span class="section-end-icon material-icons">groups</span>
+                        </div>
+                        <h3 class="section-end-title">Fin de Notre Bureau</h3>
+                        <p class="section-end-message">
+                            Rencontrez maintenant nos talentueux artistes lyriques
+                        </p>
+                        <div class="section-end-divider"></div>
+                        <a href="#" class="section-end-next" data-next-section="artistes">
+                            Nos Artistes
+                            <span class="material-icons">arrow_forward</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Artistes -->
+        <section class="section" id="artistes">
+            <div class="section-container">
+                <div class="section-header">
+                    <div class="section-header-video">
+                        <video autoplay muted loop playsinline preload="metadata">
+                            <source src="assets/videos/lasers-couleur-mouvement.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <h2 class="section-title">Nos Artistes</h2>
+                </div>
+                <div class="section-content">
+                    <div class="artistes-tabs">
+                        <div class="artiste-tab active" data-category="sopranos" tabindex="0" role="button">Sopranos</div>
+                        <div class="artiste-tab" data-category="tenors" tabindex="0" role="button">Ténors</div>
+                        <div class="artiste-tab" data-category="barytons" tabindex="0" role="button">Barytons</div>
+                        <div class="artiste-tab" data-category="pianistes" tabindex="0" role="button">Pianistes</div>
+                    </div>
+
+                    <div class="artiste-category active" id="sopranos">
+                        <div class="artiste-grid">
+                            <div class="artiste-card">
+                                <div class="artiste-photo-placeholder">
+                                    <span class="material-icons">person</span>
+                                </div>
+                                <h3 class="artiste-name">Norah Amsellem</h3>
+                                <p class="artiste-role">Soprano</p>
+                            </div>
+                            <div class="artiste-card">
+                                <div class="artiste-photo-placeholder">
+                                    <span class="material-icons">person</span>
+                                </div>
+                                <h3 class="artiste-name">Claudia Sorokina</h3>
+                                <p class="artiste-role">Soprano</p>
+                            </div>
+                            <div class="artiste-card">
+                                <div class="artiste-photo-placeholder">
+                                    <span class="material-icons">person</span>
+                                </div>
+                                <h3 class="artiste-name">Adriana Bignani Lesca</h3>
+                                <p class="artiste-role">Mezzo Soprano</p>
+                            </div>
+                            <div class="artiste-card">
+                                <div class="artiste-photo-placeholder">
+                                    <span class="material-icons">person</span>
+                                </div>
+                                <h3 class="artiste-name">Alisson Cook</h3>
+                                <p class="artiste-role">Mezzo Soprano</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="artiste-category" id="tenors">
+                        <div class="artiste-grid">
+                            <div class="artiste-card">
+                                <div class="artiste-photo-placeholder">
+                                    <span class="material-icons">person</span>
+                                </div>
+                                <h3 class="artiste-name">Luca Lombardo</h3>
+                                <p class="artiste-role">Ténor</p>
+                            </div>
+                            <div class="artiste-card">
+                                <div class="artiste-photo-placeholder">
+                                    <span class="material-icons">person</span>
+                                </div>
+                                <h3 class="artiste-name">Avi Klemberg</h3>
+                                <p class="artiste-role">Ténor</p>
+                            </div>
+                            <div class="artiste-card">
+                                <div class="artiste-photo-placeholder">
+                                    <span class="material-icons">person</span>
+                                </div>
+                                <h3 class="artiste-name">Florian Laconi</h3>
+                                <p class="artiste-role">Ténor</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="artiste-category" id="barytons">
+                        <div class="artiste-grid">
+                            <div class="artiste-card">
+                                <div class="artiste-photo-placeholder">
+                                    <span class="material-icons">person</span>
+                                </div>
+                                <h3 class="artiste-name">Richard A. Rittelmann</h3>
+                                <p class="artiste-role">Baryton</p>
+                            </div>
+                            <div class="artiste-card">
+                                <div class="artiste-photo-placeholder">
+                                    <span class="material-icons">person</span>
+                                </div>
+                                <h3 class="artiste-name">Patrick Elie Féré</h3>
+                                <p class="artiste-role">Baryton Verdien</p>
+                            </div>
+                            <div class="artiste-card">
+                                <div class="artiste-photo-placeholder">
+                                    <span class="material-icons">person</span>
+                                </div>
+                                <h3 class="artiste-name">Mickael Guedj</h3>
+                                <p class="artiste-role">Baryton</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="artiste-category" id="pianistes">
+                        <div class="artiste-grid">
+                            <div class="artiste-card">
+                                <div class="artiste-photo-placeholder">
+                                    <span class="material-icons">piano</span>
+                                </div>
+                                <h3 class="artiste-name">Elisabeth Berger</h3>
+                                <p class="artiste-role">Piano</p>
+                            </div>
+                            <div class="artiste-card">
+                                <div class="artiste-photo-placeholder">
+                                    <span class="material-icons">piano</span>
+                                </div>
+                                <h3 class="artiste-name">Giulio Zappa</h3>
+                                <p class="artiste-role">Piano</p>
+                            </div>
+                            <div class="artiste-card">
+                                <div class="artiste-photo-placeholder">
+                                    <span class="material-icons">piano</span>
+                                </div>
+                                <h3 class="artiste-name">Fabrice Alibert</h3>
+                                <p class="artiste-role">Piano</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Lien vers le site web avec tous les artistes -->
+                    <div class="artistes-website-link">
+                        <p class="artistes-website-text">
+                            Découvrez l'ensemble de nos 41 artistes d'exception sur notre site officiel
+                        </p>
+                        <a href="https://www.bohemeproduction.com" target="_blank" class="artistes-website-button">
+                            <span class="material-icons">language</span>
+                            Voir tous nos artistes
+                        </a>
+                    </div>
+
+                    <!-- POINT DE FIN ARTISTES -->
+                    <div class="section-end-point" data-section="artistes">
+                        <div class="section-end-ornament">
+                            <span class="section-end-icon material-icons">theater_comedy</span>
+                        </div>
+                        <h3 class="section-end-title">Fin de Nos Artistes</h3>
+                        <p class="section-end-message">
+                            Explorez maintenant nos créations et productions artistiques
+                        </p>
+                        <div class="section-end-divider"></div>
+                        <a href="#" class="section-end-next" data-next-section="productions">
+                            Nos Productions
+                            <span class="material-icons">arrow_forward</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Productions -->
+        <section class="section" id="productions">
+            <div class="section-container">
+                <div class="section-header">
+                    <div class="section-header-video">
+                        <video autoplay muted loop playsinline preload="metadata">
+                            <source src="assets/videos/lasers-couleur-mouvement.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <h2 class="section-title">Nos Productions</h2>
+                </div>
+                <div class="section-content">
+                    <!-- Grille des productions -->
+                    <div class="production-grid">
+                        <div class="production-card">
+                            <div class="production-image">
+                                <div class="production-image-overlay"></div>
+                            </div>
+                            <div class="production-content">
+                                <h3 class="production-title">Comédies Musicales</h3>
+                                <p class="production-description">
+                                    Des spectacles complets alliant chant, danse et théâtre dans des productions originales et revisitées.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="production-card">
+                            <div class="production-image">
+                                <div class="production-image-overlay"></div>
+                            </div>
+                            <div class="production-content">
+                                <h3 class="production-title">Spectacles Thématiques</h3>
+                                <p class="production-description">
+                                    Des créations sur mesure adaptées à vos événements privés ou professionnels avec nos artistes polyvalents.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="production-card">
+                            <div class="production-image">
+                                <div class="production-image-overlay"></div>
+                            </div>
+                            <div class="production-content">
+                                <h3 class="production-title">Galas de Prestige</h3>
+                                <p class="production-description">
+                                    Des soirées d'exception dans les plus beaux lieux de la Côte d'Azur et au-delà.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="production-card">
+                            <div class="production-image">
+                                <div class="production-image-overlay"></div>
+                            </div>
+                            <div class="production-content">
+                                <h3 class="production-title">Collaborations Artistiques</h3>
+                                <p class="production-description">
+                                    Des partenariats avec des festivals, théâtres et institutions culturelles prestigieuses.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- POINT DE FIN PRODUCTIONS -->
+                    <div class="section-end-point" data-section="productions">
+                        <div class="section-end-ornament">
+                            <span class="section-end-icon material-icons">movie</span>
+                        </div>
+                        <h3 class="section-end-title">Fin de Nos Productions</h3>
+                        <p class="section-end-message">
+                            Contactez-nous pour concrétiser vos projets artistiques
+                        </p>
+                        <div class="section-end-divider"></div>
+                        <a href="#" class="section-end-next" data-next-section="contact">
+                            Nous Contacter
+                            <span class="material-icons">arrow_forward</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Contact -->
+        <section class="section" id="contact">
+            <div class="section-container">
+                <div class="section-header">
+                    <div class="section-header-video">
+                        <video autoplay muted loop playsinline preload="metadata">
+                            <source src="assets/videos/lasers-couleur-mouvement.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <h2 class="section-title">Contact</h2>
+                </div>
+                <div class="section-content">
+                    <!-- Contenu de contact avec informations et carte -->
+                    <div class="contact-content">
+                        <div class="contact-info">
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <span class="material-icons">phone</span>
+                                </div>
+                                <div class="contact-text">
+                                    +33 (0)4 93 XX XX XX
+                                    <span>Ligne directe</span>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <span class="material-icons">email</span>
+                                </div>
+                                <div class="contact-text">
+                                    contact@bohemeproduction.com
+                                    <span>Contact professionnel</span>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <span class="material-icons">location_on</span>
+                                </div>
+                                <div class="contact-text">
+                                    Côte d'Azur, France
+                                    <span>Rayonnement international</span>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <span class="material-icons">schedule</span>
+                                </div>
+                                <div class="contact-text">
+                                    Disponible 7j/7
+                                    <span>Pour vos projets artistiques</span>
+                                </div>
+                            </div>
+                            <div class="contact-social">
+                                <h3 class="contact-social-title">Suivez-nous</h3>
+                                <div class="social-links">
+                                    <div class="social-link">
+                                        <span class="material-icons">facebook</span>
+                                    </div>
+                                    <div class="social-link">
+                                        <span class="material-icons">music_note</span>
+                                    </div>
+                                    <div class="social-link">
+                                        <span class="material-icons">language</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="map-container">
+                            <div class="map-placeholder">
+                                <span class="material-icons" style="font-size: 48px; margin-bottom: 20px; color: var(--gold);">place</span>
+                                <p>Côte d'Azur, France</p>
+                                <p>Rayonnement international</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- POINT DE FIN CONTACT -->
+                    <div class="section-end-point" data-section="contact">
+                        <div class="section-end-ornament">
+                            <span class="section-end-icon material-icons">contact_mail</span>
+                        </div>
+                        <h3 class="section-end-title">Fin de Contact</h3>
+                        <p class="section-end-message">
+                            Merci d'avoir découvert l'univers de Bohème Production
+                        </p>
+                        <div class="section-end-divider"></div>
+                        <a href="#" class="section-end-next" data-next-section="cover">
+                            Retour à l'Accueil
+                            <span class="material-icons">home</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Contrôles présentation -->
+    <div class="presentation-controls">
+        <button class="presentation-control-btn" id="prev-section-btn" title="Section précédente">
+            <span class="material-icons">arrow_back</span>
+        </button>
+        <button class="presentation-control-btn" id="next-section-btn" title="Section suivante">
+            <span class="material-icons">arrow_forward</span>
+        </button>
+        <button class="presentation-control-btn" id="exit-presentation-btn" title="Quitter le mode présentation">
+            <span class="material-icons">close</span>
+        </button>
+    </div>
+
+    <!-- Indicateur mode présentation -->
+    <div class="presentation-indicator">Mode Présentation</div>
+
+    <!-- Page transition overlay -->
+    <div class="page-transition" id="page-transition"></div>
+
+    <!-- JavaScript -->
+    <script src="js/script.js"></script>
+</body>
+</html>

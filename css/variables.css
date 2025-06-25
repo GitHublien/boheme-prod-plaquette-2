@@ -1,0 +1,233 @@
+/* ================================
+   VARIABLES CSS ET BASE
+   ================================ */
+
+:root {
+    --gold: #D4AF37;
+    --gold-light: #F9F1DB;
+    --gold-dark: #A58728;
+    --cream: #FFFCF6;
+    --dark: #1A1A1A;
+    --gray: #767676;
+    --light-gray: #F5F5F5;
+    --black: #000000;
+    --warm-brown: #8B4513;
+    --light-brown: #CD853F;
+    --beige: #F0E6D6;
+    --beige-light: #F5F0E8;
+    --beige-dark: #E8DDD4;
+    --cream-dark: #F2E6D0;
+
+    /* Optimisation: Variables d'ombres centralisées */
+    --shadow-light: 0 2px 8px rgba(0,0,0,0.1);
+    --shadow-medium: 0 4px 16px rgba(0,0,0,0.15);
+    --shadow-heavy: 0 8px 32px rgba(0,0,0,0.2);
+    --shadow-gold: 0 0 15px rgba(212,175,55,0.3);
+}
+
+/* ================================
+   RESET ET BASE
+   ================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+html, body {
+    height: 100%;
+    overflow: hidden;
+    background: var(--cream);
+    font-family: 'Cormorant Garamond', serif;
+    color: var(--dark);
+}
+
+/* ================================
+   ACCESSIBILITÉ
+   ================================ */
+
+/* Amélioration accessibilité: Respect des préférences de mouvement */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* ================================
+   BARRES DE DÉFILEMENT
+   ================================ */
+
+/* Barre de défilement stylisée */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--light-gray);
+    border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, var(--gold), var(--gold-dark));
+    border-radius: 6px;
+    border: 2px solid var(--light-gray);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, var(--gold-dark), var(--gold));
+}
+
+/* Pour Firefox */
+html {
+    scrollbar-width: thin;
+    scrollbar-color: var(--gold) var(--light-gray);
+}
+
+/* ================================
+   OPTIMISATIONS PERFORMANCE
+   ================================ */
+
+/* Optimisation: Propriétés communes pour éléments interactifs */
+.interactive-element,
+.audio-control-btn,
+.nav-dot,
+.social-link,
+.presentation-control-btn,
+.artiste-tab,
+.artiste-card,
+.bureau-card,
+.production-card,
+.section-end-next {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    transition: all 0.3s ease;
+    user-select: none;
+    touch-action: manipulation;
+}
+
+/* Amélioration accessibilité: Focus visible */
+.audio-control-btn:focus-visible,
+.nav-dot:focus-visible,
+.social-link:focus-visible,
+.presentation-control-btn:focus-visible,
+.artiste-tab:focus-visible,
+.section-end-next:focus-visible {
+    outline: 3px solid var(--gold);
+    outline-offset: 2px;
+}
+
+/* ================================
+   ANIMATIONS OPTIMISÉES
+   ================================ */
+
+.fade-up {
+    animation: fadeUp 1s ease forwards;
+}
+
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in-delay-1 {
+    opacity: 0;
+    animation: fadeIn 1s ease forwards 0.3s;
+}
+
+.fade-in-delay-2 {
+    opacity: 0;
+    animation: fadeIn 1s ease forwards 0.6s;
+}
+
+.fade-in-delay-3 {
+    opacity: 0;
+    animation: fadeIn 1s ease forwards 0.9s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-15px);
+    }
+    60% {
+        transform: translateY(-8px);
+    }
+}
+
+@keyframes goldGlow {
+    0% {
+        box-shadow: 0 0 20px rgba(212,175,55,0.6), inset 0 0 15px rgba(255,255,255,0.1);
+    }
+    100% {
+        box-shadow: 0 0 35px rgba(212,175,55,1), inset 0 0 25px rgba(255,255,255,0.3);
+    }
+}
+
+/* ================================
+   INDICATEUR DE CHARGEMENT
+   ================================ */
+
+.loading-indicator {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+    background: rgba(0,0,0,0.8);
+    color: var(--gold);
+    padding: 20px;
+    border-radius: 10px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* ================================
+   TRANSITION DE PAGE
+   ================================ */
+
+.page-transition {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    background: linear-gradient(45deg,
+        rgba(212,175,55,0.3) 0%,
+        rgba(0,0,0,0.8) 50%,
+        rgba(212,175,55,0.3) 100%
+    );
+}
+
+.page-transition.active {
+    opacity: 1;
+}
+
+/* ================================
+   TYPOGRAPHIE GLOBALE
+   ================================ */
+
+.text-gold-shimmer {
+    color: var(--gold);
+    font-weight: 700;
+    text-shadow:
+        2px 2px 4px rgba(0,0,0,0.9),
+        0 0 10px rgba(212,175,55,0.8),
+        0 0 15px rgba(212,175,55,0.6);
+}

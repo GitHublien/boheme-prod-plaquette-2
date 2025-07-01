@@ -1,0 +1,653 @@
+/* ================================
+   RESPONSIVE DESIGN
+   ================================ */
+
+/* ================================
+   TABLETTES ET PETITS ÉCRANS
+   ================================ */
+
+@media (max-width: 768px) {
+    /* Navigation mobile */
+    .navigation {
+        bottom: 30px !important;
+        top: auto !important;
+        right: 50% !important;
+        transform: translateX(50%) translateZ(0) !important;
+        flex-direction: row !important;
+        background: rgba(255,255,255,0.95);
+        padding: 15px 20px;
+        border-radius: 30px;
+        border: 2px solid var(--gold);
+        backdrop-filter: blur(10px);
+        box-shadow: var(--shadow-heavy);
+    }
+
+    .nav-tooltip {
+        display: none;
+    }
+
+    /* Audio controls mobile */
+    .audio-controls {
+        top: 10px;
+        right: 10px;
+        padding: 6px;
+        gap: 6px;
+    }
+
+    .audio-control-btn {
+        width: 30px;
+        height: 30px;
+    }
+
+    .audio-control-btn .material-icons {
+        font-size: 16px;
+    }
+
+    .volume-slider {
+        width: 50px;
+        height: 30px;
+        padding: 0 6px;
+    }
+
+    /* Sections containers */
+    .section-container {
+        width: 100%;
+        height: 100%;
+        border-radius: 0;
+        background: rgba(255, 255, 255, 0.7);
+    }
+
+    .section-header {
+        padding: 20px;
+        text-align: left;
+        background: rgba(255, 255, 255, 0.8);
+    }
+
+    .section-title {
+        text-align: left;
+        font-size: 2rem;
+    }
+
+    .section-content {
+        padding-bottom: 150px;
+        background: rgba(255, 255, 255, 0.1);
+    }
+
+    /* Cover section mobile */
+    .logo-container {
+        width: 320px;
+        height: 320px;
+    }
+
+    .cover-title {
+        font-size: 2.5rem;
+    }
+
+    .cover-subtitle {
+        font-size: 1.2rem;
+    }
+
+    .cover-interactive-text {
+        font-size: 1.2rem;
+    }
+
+    .cover-scroll-indicator {
+        bottom: 120px;
+    }
+
+    /* Magazine content mobile */
+    .intro-content-magazine {
+        padding-bottom: 200px;
+    }
+
+    .scrollable-content {
+        padding-bottom: 200px;
+    }
+
+    .hero-image-container {
+        height: 300px;
+    }
+
+    .hero-image-title {
+        font-size: 1.5rem;
+    }
+
+    .magazine-content-wrapper {
+        padding: 20px;
+    }
+
+    .magazine-title-main {
+        font-size: 2.5rem;
+    }
+
+    .magazine-paragraph {
+        font-size: 1.2rem;
+        text-align: left;
+    }
+
+    .magazine-section-title, .magazine-section-title-center {
+        font-size: 1.6rem;
+        padding: 15px 20px;
+    }
+
+    .content-section-container {
+        padding: 20px;
+        margin: 20px 0;
+    }
+
+    .content-text-block {
+        padding: 20px;
+        margin: 20px 0;
+    }
+
+    .content-text {
+        font-size: 1.2rem;
+        text-align: left;
+    }
+
+    .video-content-block {
+        margin: 25px 0;
+    }
+
+    .trilogie-section-container, .artistic-collage-section {
+        margin: 35px 0;
+    }
+
+    .trilogie-image-placeholder, .artistic-collage-placeholder {
+        height: 300px;
+        font-size: 2rem;
+    }
+
+    .patrick-quote-highlight {
+        padding: 30px 20px 20px 20px;
+        margin: 45px 0;
+    }
+
+    .patrick-quote-title {
+        font-size: 1.5rem;
+    }
+
+    .patrick-quote {
+        font-size: 1.3rem;
+    }
+
+    .boheme-signature-image {
+        max-width: 500px;
+    }
+
+    .boheme-signature-placeholder {
+        font-size: 3.5rem;
+        padding: 15px;
+    }
+
+    .decorative-logo-section {
+        max-width: 95%;
+        padding: 25px 15px;
+        margin: 25px auto;
+    }
+
+    .decorative-logo {
+        max-width: 250px;
+    }
+
+    .decorative-logo-placeholder {
+        width: 250px;
+        height: 250px;
+        font-size: 2rem;
+    }
+
+    /* Bureau section mobile */
+    .bureau-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 15px;
+        padding: 20px;
+    }
+
+    .bureau-footer-text {
+        margin-bottom: 180px;
+        font-size: 0.9rem;
+    }
+
+    /* Artistes section mobile */
+    .artistes-tabs {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+    }
+
+    .artiste-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    /* Productions section mobile */
+    .production-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 20px;
+    }
+
+    /* Contact section mobile */
+    .contact-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        padding: 20px;
+    }
+
+    .map-container {
+        height: 300px;
+    }
+
+    /* Section end points mobile */
+    .section-end-point {
+        margin: 40px auto;
+        padding: 20px 25px;
+        max-width: 90%;
+    }
+
+    .section-end-title {
+        font-size: 1.8rem;
+    }
+
+    /* Productions title mobile */
+    #productions .section-title {
+        font-size: 1.7rem;
+    }
+
+    /* Presentation controls mobile */
+    .presentation-controls {
+        bottom: 20px !important;
+        left: 20px !important;
+        right: auto !important;
+        transform: none !important;
+        flex-direction: column !important;
+        padding: 12px 10px !important;
+        gap: 8px !important;
+        border-radius: 25px !important;
+    }
+
+    .presentation-control-btn {
+        width: 35px;
+        height: 35px;
+    }
+
+    .presentation-control-btn .material-icons {
+        font-size: 18px;
+    }
+
+    /* Presentation indicator mobile */
+    .presentation-indicator {
+        top: 20px !important;
+        left: 20px !important;
+        right: auto !important;
+        padding: 8px 12px !important;
+        font-size: 12px !important;
+    }
+}
+
+/* ================================
+   TRÈS PETITS ÉCRANS (MOBILES)
+   ================================ */
+
+@media (max-width: 576px) {
+    .cover-title {
+        font-size: 2rem;
+    }
+
+    .logo-container {
+        width: 280px;
+        height: 280px;
+    }
+
+    .bureau-grid, .artiste-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .production-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+        text-align: left;
+    }
+
+    .artistes-tabs {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+    }
+
+    .golden-line {
+        width: 80%;
+    }
+
+    .cover-interactive-text {
+        font-size: 1rem;
+    }
+
+    .magazine-title-main {
+        font-size: 2rem;
+    }
+
+    .magazine-section-title {
+        font-size: 1.6rem;
+        padding: 15px 20px;
+    }
+
+    .patrick-quote-title {
+        font-size: 1.5rem;
+    }
+
+    .magazine-paragraph {
+        font-size: 1.2rem;
+        text-align: left;
+    }
+
+    .content-section-container {
+        padding: 15px;
+        margin: 10px 0;
+    }
+
+    .patrick-quote-highlight {
+        padding: 25px 15px 15px 15px;
+        margin: 30px 0;
+    }
+
+    .section-content {
+        padding-bottom: 180px;
+    }
+
+    .intro-content-magazine {
+        padding-bottom: 220px;
+    }
+}
+
+/* ================================
+   GRANDS ÉCRANS (DESKTOP)
+   ================================ */
+
+@media (min-width: 1200px) {
+    .section-container {
+        max-width: 1400px;
+    }
+
+    .cover-content {
+        max-width: 1400px;
+    }
+
+    .logo-container {
+        width: 600px;
+        height: 600px;
+    }
+
+    .cover-title {
+        font-size: 5rem;
+    }
+
+    .cover-subtitle {
+        font-size: 2.2rem;
+    }
+
+    .section-title {
+        font-size: 3.2rem;
+    }
+
+    .magazine-title-main {
+        font-size: 4rem;
+    }
+
+    .patrick-quote-title {
+        font-size: 2.5rem;
+    }
+
+    .magazine-section-title, .magazine-section-title-center {
+        font-size: 2.2rem;
+    }
+
+    .boheme-signature-image {
+        max-width: 1200px;
+    }
+
+    .decorative-logo {
+        max-width: 600px;
+    }
+
+    .decorative-logo-placeholder {
+        width: 600px;
+        height: 600px;
+        font-size: 4rem;
+    }
+}
+
+/* ================================
+   MODE PAYSAGE MOBILE
+   ================================ */
+
+@media (max-height: 600px) and (orientation: landscape) {
+    .cover-scroll-indicator {
+        bottom: 50px;
+    }
+
+    .navigation {
+        bottom: 20px !important;
+        padding: 10px 15px;
+    }
+
+    .logo-container {
+        width: 250px;
+        height: 250px;
+        margin-bottom: 20px;
+    }
+
+    .cover-title {
+        font-size: 2rem;
+        margin-bottom: 10px;
+    }
+
+    .cover-subtitle {
+        font-size: 1rem;
+        margin-bottom: 15px;
+    }
+
+    .golden-line {
+        margin: 15px 0;
+    }
+
+    .cover-interactive-text {
+        font-size: 1rem;
+        margin-top: 10px;
+    }
+
+    .section-header {
+        padding: 15px 20px;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+    }
+
+    .section-content {
+        padding-bottom: 100px;
+    }
+}
+
+/* ================================
+   PRINT STYLES
+   ================================ */
+
+@media print {
+    .audio-controls,
+    .navigation,
+    .presentation-controls,
+    .presentation-indicator,
+    .global-background-video,
+    .section-header-video,
+    .hero-image-video-background,
+    .video-background-container,
+    .trilogie-video-background,
+    .artistic-collage-video-background,
+    .decorative-video-background {
+        display: none !important;
+    }
+
+    .section {
+        position: static !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        page-break-after: always;
+    }
+
+    .section-container {
+        width: 100% !important;
+        height: auto !important;
+        max-width: none !important;
+        max-height: none !important;
+        border-radius: 0 !important;
+        background: white !important;
+        box-shadow: none !important;
+        border: 1px solid #ccc !important;
+    }
+
+    .section-content {
+        overflow: visible !important;
+        height: auto !important;
+        padding-bottom: 20px !important;
+    }
+
+    body {
+        background: white !important;
+        color: black !important;
+        font-size: 12pt !important;
+    }
+
+    .cover-section {
+        text-align: center;
+    }
+
+    .logo-container {
+        width: 300px !important;
+        height: 300px !important;
+        border: 2px solid #ccc !important;
+        box-shadow: none !important;
+    }
+
+    .cover-title {
+        font-size: 24pt !important;
+        color: #333 !important;
+    }
+
+    .cover-subtitle {
+        font-size: 16pt !important;
+        color: #666 !important;
+    }
+
+    .section-title {
+        font-size: 20pt !important;
+        color: #333 !important;
+    }
+
+    .magazine-paragraph,
+    .content-text {
+        color: #333 !important;
+        text-shadow: none !important;
+        font-size: 11pt !important;
+        line-height: 1.4 !important;
+    }
+
+    .patrick-quote {
+        color: #333 !important;
+        font-size: 12pt !important;
+    }
+
+    .patrick-quote-title {
+        color: #666 !important;
+        font-size: 16pt !important;
+    }
+
+    .section-end-point {
+        background: #f5f5f5 !important;
+        border: 1px solid #ccc !important;
+        color: #333 !important;
+    }
+
+    .bureau-card,
+    .artiste-card,
+    .production-card {
+        background: #f9f9f9 !important;
+        border: 1px solid #ddd !important;
+        box-shadow: none !important;
+    }
+}
+
+/* ================================
+   DARK MODE SUPPORT
+   ================================ */
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --dark: #ffffff;
+        --cream: #1a1a1a;
+        --light-gray: #333333;
+    }
+
+    .section-container {
+        background: rgba(0, 0, 0, 0.8) !important;
+    }
+
+    .section-header {
+        background: rgba(0, 0, 0, 0.9) !important;
+    }
+
+    .bureau-card,
+    .artiste-card,
+    .production-card {
+        background: rgba(0, 0, 0, 0.8) !important;
+        color: white !important;
+    }
+
+    .contact-text {
+        background: rgba(0, 0, 0, 0.3) !important;
+        color: white !important;
+    }
+
+    .map-container {
+        background: rgba(0, 0, 0, 0.8) !important;
+    }
+
+    .artistes-website-link {
+        background: rgba(0, 0, 0, 0.3) !important;
+    }
+
+    .navigation {
+        background: rgba(0, 0, 0, 0.95) !important;
+    }
+}
+
+/* ================================
+   HIGH CONTRAST MODE
+   ================================ */
+
+@media (prefers-contrast: high) {
+    .nav-dot,
+    .audio-control-btn,
+    .section-end-next,
+    .artistes-website-button {
+        border: 3px solid #000000 !important;
+    }
+
+    .section-title,
+    .cover-title,
+    .patrick-quote-title {
+        border: 2px solid #000000 !important;
+    }
+
+    .golden-line,
+    .section-end-divider {
+        background: #000000 !important;
+    }
+
+    .bureau-card,
+    .artiste-card,
+    .production-card {
+        border: 3px solid #000000 !important;
+    }
+}
